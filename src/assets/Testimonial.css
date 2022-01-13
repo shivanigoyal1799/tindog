@@ -1,0 +1,14 @@
+.testimonial{
+    background-color: #e6351e;
+    color: white;
+    text-align: center;
+    padding:10% 15%;
+} 
+
+.testimonial-img{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    padding: 5% 5% 0 0;
+   
+}

@@ -1,0 +1,31 @@
+
+
+.title{
+    background-color: #e6351e;
+    color:#fff;
+    padding:5% 15%;
+}
+
+.main-section{
+    padding:5% 0;
+
+}
+
+.info{
+    line-height: 1.5;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.title-image{
+    /* height:50%; */
+    width: 21rem;
+    padding: 30% 15% 0 10%;
+    transform: rotate(15deg);
+}
+.btn-container{
+    display: flex;
+}
+.btn{
+    margin: 1rem 2rem 1rem 0;  
+}

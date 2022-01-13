@@ -1,0 +1,15 @@
+
+.main-title{
+    font-size: 2rem;
+    font-weight: 900;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+
+
+#items-container{
+    display: flex;
+    /* flex-direction: row;
+    justify-content: flex-end; */
+}

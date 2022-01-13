@@ -1,0 +1,18 @@
+h3{
+    font-family: Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    /* font-size: 10rem; */
+}
+p{
+    color: grey;
+    padding:1rem 0
+}
+
+
+.features{
+    padding:8% 15%;
+}
+.item{
+    text-align: center;
+    line-height: 2;
+}

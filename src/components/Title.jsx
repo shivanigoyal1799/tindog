@@ -1,35 +1,40 @@
-import React, { useState } from 'react';
-import "../assets/Title.css"
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
+import React from "react";
+import NavBar from "./NavBar";
+import photo from "../assets/iphone6.png";
+import { Button ,Row,Col,Container} from "reactstrap";
+import "../assets/Title.css";
 
 const Title = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
   return (
-    <div>
-      <Navbar color="success" light expand="md">
-        <NavbarBrand href="/">TinDog</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="#">Contacts</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">Pricing</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
+    <div className="title">
+      <NavBar />
+      <div className="main-section">
+        <Container>
+          <Row>
+            <Col md="6">
+              <h1 className="info">Meet new and interesting dogs nearby.</h1>
+              <div className="btn-container">
+                <div>
+                  <Button className="btn" color="dark" size="lg">
+                    Download
+                  </Button>
+                </div>
+                <div>
+                  <Button className="btn" color="dark" outline size="lg">
+                    Download
+                  </Button>
+                </div>
+              </div>
+            </Col>
+            <Col md="6">
+              <div>
+                <img src={photo} className="title-image" alt="iphone" />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
-}
+};
 export default Title;
