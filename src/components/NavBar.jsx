@@ -15,11 +15,11 @@ const NavBar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="NavBar">
-      <Navbar light dark expand="md">
+      <Navbar dark expand="md">
         <NavbarBrand href="/" className='main-title'>tindog</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" id="items-container" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink href="#">Contacts</NavLink>
             </NavItem>

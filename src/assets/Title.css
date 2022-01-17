@@ -4,6 +4,7 @@
     background-color: #e6351e;
     color:#fff;
     padding:5% 15%;
+    
 }
 
 .main-section{
@@ -18,14 +19,26 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .title-image{
-    /* height:50%; */
-    width: 21rem;
-    padding: 30% 15% 0 10%;
-    transform: rotate(15deg);
+    
+    width: 26rem;
+    padding: 10% 15% 0 10%;
+    margin-left: auto;
+    transform: rotate(20deg);
+    position: absolute;
+    right: 10%;
 }
 .btn-container{
     display: flex;
 }
 .btn{
     margin: 1rem 2rem 1rem 0;  
+}
+@media (max-width :1030px){
+    .main-section{
+        text-align: center;
+    }
+    .title-image{
+        position: static;
+        transform: rotate(0);
+    }
 }

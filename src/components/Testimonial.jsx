@@ -1,70 +1,87 @@
-import React from "react";
-// import { Carousel,CarouselCaption,CarouselItem,CarouselControl} from "bootstrap";
-import "../assets/Testimonial.css";
+import React, { useState } from 'react';
+
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+} from 'reactstrap';
 import DOG_IMAGE from "../assets/dog-img.jpg";
 import LADY_IMAGE from "../assets/lady-img.jpg";
+import "../assets/Testimonial.css";
+
+
+const items = [
+  {
+    src: {DOG_IMAGE},
+    altText:"dog_image",
+    text: "I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.",
+    caption: "Pebbles, New York"
+  },
+  {
+    src: {LADY_IMAGE},
+    altText:"lady_image",
+    text:" My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.",
+    caption: "Beverly, Illinois"
+  },
+];
 
 const Testimonial = (props) => {
-  return (
-    <div className="testimonial">
-      <h2>
-        I no longer have to sniff other dogs for love. I've found the hottest
-        Corgi on TinDog. Woof.
-      </h2>
-      <img src={DOG_IMAGE} alt="dog-profile" className="testimonial-img" />
-      <em>Pebbles, New York</em>
-      <h2 class="testimonial-text">
-        My dog used to be so lonely, but with TinDog's help, they've found the
-        love of their life. I think.
-      </h2>
-      <img
-        class="testimonial-image"
-        src={LADY_IMAGE}
-        alt="lady-profile"
-        className="testimonial-img"
-      />
-      <em>Beverly, Illinois</em>
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
-      {/* <Carousel
-        activeIndex={0}
-        next={function noRefCheck() {}}
-        previous={function noRefCheck() {}}
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  }
+
+  // const goToIndex = (newIndex) => {
+  //   if (animating) return;
+  //   setActiveIndex(newIndex);
+  // }
+
+  const slides = items.map((item) => {
+    return (
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.altText}
       >
-        <CarouselItem
-          onExited={function noRefCheck() {}}
-          onExiting={function noRefCheck() {}}
-        >
-          <img alt="Slide 1" src="https://picsum.photos/id/123/1200/600" />
-          <CarouselCaption captionHeader="Slide 1" captionText="Slide 1" />
-        </CarouselItem>
-        <CarouselItem
-          onExited={function noRefCheck() {}}
-          onExiting={function noRefCheck() {}}
-        >
-          <img alt="Slide 2" src="https://picsum.photos/id/456/1200/600" />
-          <CarouselCaption captionHeader="Slide 2" captionText="Slide 2" />
-        </CarouselItem>
-        <CarouselItem
-          onExited={function noRefCheck() {}}
-          onExiting={function noRefCheck() {}}
-        >
-          <img alt="Slide 3" src="https://picsum.photos/id/678/1200/600" />
-          <CarouselCaption captionHeader="Slide 3" captionText="Slide 3" />
-        </CarouselItem>
-        <CarouselControl
-          direction="prev"
-          directionText="Previous"
-          onClickHandler={function noRefCheck() {}}
-        />
-        <CarouselControl
-          direction="next"
-          directionText="Next"
-          onClickHandler={function noRefCheck() {}}
-        />
-      </Carousel> */}
+        <div className='testimonial-item'>
+          <h2>{item.text}</h2>
+          <img src={item.src} alt={item.altText} className="testimonial-img" />
+          <em>{item.caption}</em>
+        </div>
+        {/* <img src={item.src} alt={item.altText} />
+        <CarouselCaption
+          captionText={item.caption}
+          captionHeader={item.caption}
+        /> */}
+      </CarouselItem>
+    );
+  });
+
+  return (
+    <div className='testimonial'>
+      <Carousel
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+    >
+      {/* <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} /> */}
+      {slides}
+      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+    </Carousel>
+
     </div>
   );
 }
-
 
 export default Testimonial;

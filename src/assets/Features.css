@@ -1,7 +1,6 @@
 h3{
     font-family: Geneva, Tahoma, sans-serif;
     font-weight: bolder;
-    /* font-size: 10rem; */
 }
 p{
     color: grey;
@@ -11,6 +10,9 @@ p{
 
 .features{
     padding:8% 15%;
+    position: relative;
+    z-index: 1;
+    background-color: white;
 }
 .item{
     text-align: center;
