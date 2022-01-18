@@ -4,3 +4,8 @@
     padding:10% 15%;
     text-align: center;
 }
+.cta>h1{
+    font-weight: bolder;
+    line-height: 1.5;
+    font-family: 'Montserrat-Black', sans-serif !important;
+}

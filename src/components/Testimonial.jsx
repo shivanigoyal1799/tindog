@@ -12,13 +12,13 @@ import "../assets/Testimonial.css";
 
 const items = [
   {
-    src: {DOG_IMAGE},
+    src: DOG_IMAGE,
     altText:"dog_image",
     text: "I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.",
     caption: "Pebbles, New York"
   },
   {
-    src: {LADY_IMAGE},
+    src: LADY_IMAGE,
     altText:"lady_image",
     text:" My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.",
     caption: "Beverly, Illinois"
